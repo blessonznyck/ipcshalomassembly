@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#2b7a8e"/>
+  <path d="M 100 40 L 130 80 L 170 80 L 140 110 L 155 150 L 100 120 L 45 150 L 60 110 L 30 80 L 70 80 Z" fill="white"/>
+  <text x="100" y="180" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">IPC SHALOM</text>
+</svg>

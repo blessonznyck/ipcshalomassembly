@@ -2,6 +2,7 @@
 
 import { Navbar, Nav, Container, Button, NavDropdown } from 'react-bootstrap'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Navigation() {
@@ -16,7 +17,15 @@ export default function Navigation() {
       className="shadow-sm sticky-top"
     >
       <Container>
-        <Navbar.Brand as={Link} href="/" className="fw-bold text-primary-custom">
+        <Navbar.Brand as={Link} href="/" className="fw-bold text-primary-custom d-flex align-items-center gap-2">
+          <Image 
+            src="/logo.jpg" 
+            alt="IPC Shalom Assembly Logo" 
+            width={50} 
+            height={50}
+            style={{ objectFit: 'contain' }}
+            priority
+          />
           <span style={{ fontSize: '1.5rem' }}>IPC SHALOM ASSEMBLY</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -15,8 +15,8 @@ export default function Visit() {
             <p className="lead bs-w">
               Whether you&apos;re new to church or have been attending for
               years, we want you to feel welcomed and valued. As Paul says
-              "Therefore welcome one another as Christ has welcomed you, for the
-              glory of God."
+              &quot;Therefore welcome one another as Christ has welcomed you, for the
+              glory of God.&quot;
             </p>
           </Col>
         </Container>

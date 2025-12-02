@@ -69,7 +69,6 @@ shalom/
 │   ├── STYLING.md                 # CSS and styling guide
 │   └── DEVELOPMENT.md             # Development workflow
 ├── public/
-│   ├── favicon.svg                # Site favicon
 │   ├── manifest.json              # PWA manifest
 │   └── robots.txt                 # SEO robots file
 ├── src/

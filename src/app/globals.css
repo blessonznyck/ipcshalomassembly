@@ -137,6 +137,14 @@ footer a:hover {
   margin: 20px 0;
 }
 
+.glass-card {
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2) !important;
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 0.9rem;

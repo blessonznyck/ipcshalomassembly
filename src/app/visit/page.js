@@ -8,15 +8,15 @@ export default function Visit() {
       {/* Page Header */}
       <section className="hero-section" style={{ minHeight: "40vh" }}>
         <Container>
-          <Col lg={8} className="mx-auto text-center">
+          <Col lg={10} className="mx-auto text-center">
             <h2 className="section-title text-white">
               Welcome to IPC Shalom Assembly
             </h2>
             <p className="lead bs-w">
               Whether you&apos;re new to church or have been attending for
-              years, we want you to feel welcomed and valued. Come as you are -
-              we&apos;re a community of real people following Jesus together at
-              IPC Shalom Assembly.
+              years, we want you to feel welcomed and valued. As Paul says
+              "Therefore welcome one another as Christ has welcomed you, for the
+              glory of God."
             </p>
           </Col>
         </Container>

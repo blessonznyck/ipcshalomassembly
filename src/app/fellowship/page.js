@@ -9,24 +9,14 @@ export default function Fellowship() {
       {/* Page Header */}
       <section className="hero-section" style={{ minHeight: '40vh' }}>
         <Container>
-          <h1 className="display-4 fw-bold">Fellowship</h1>
-          <p className="lead">Join our vibrant community of believers</p>
-        </Container>
-      </section>
-
-      {/* Introduction */}
-      <section className="section">
-        <Container>
-          <Row>
-            <Col lg={8} className="mx-auto text-center">
-              <h2 className="section-title">Growing Together in Faith</h2>
-              <p className="lead text-muted">
+          <Col lg={10} className="mx-auto text-center">
+              <h1 className="section-title text-white">Growing Together in Faith</h1>
+              <p className="lead text-white">
                 At IPC Shalom Assembly, fellowship is at the heart of our church community. 
                 We believe in building strong relationships, supporting one another, 
                 and growing together in our walk with Christ.
               </p>
             </Col>
-          </Row>
         </Container>
       </section>
 

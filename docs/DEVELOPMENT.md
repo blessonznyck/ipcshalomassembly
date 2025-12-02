@@ -142,7 +142,6 @@ shalom/
 │   ├── STYLING.md             # CSS guide
 │   └── DEVELOPMENT.md         # This file
 ├── public/                     # Static files
-│   ├── favicon.svg            # Site icon
 │   ├── manifest.json          # PWA manifest
 │   └── robots.txt             # SEO robots
 ├── src/                        # Source code

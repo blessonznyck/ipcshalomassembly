@@ -64,7 +64,7 @@ The landing page that introduces visitors to IPC Shalom Assembly and provides qu
 <section className="section bg-primary-custom text-white">
 ```
 - **Heading**: "Welcome to IPC Shalom Assembly"
-- **Service Times**: Sundays at 9 AM and 11 AM
+- **Service Times**: Sundays at 10:00 AM and 1:00 PM
 - **Address**: Full Chennai address
 - **CTA**: "Plan Your Visit" → `/visit`
 

@@ -269,7 +269,7 @@ Three-column grid on desktop, stacked on mobile:
   <h5 className="mb-3">Contact</h5>
   <p className="text-white-50 mb-2">
     <strong>Service Times:</strong><br />
-    Sundays at 9 AM and 11 AM
+    Sundays at 10:00 AM and 1:00 PM
   </p>
   <p className="text-white-50">
     <strong>Address:</strong><br />
@@ -351,7 +351,7 @@ footer a:hover {
 **Service Times:**
 ```javascript
 <strong>Service Times:</strong><br />
-Sundays at 9 AM and 11 AM
+Sundays at 10:00 AM and 1:00 PM
 ```
 
 **Address:**

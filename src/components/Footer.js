@@ -1,5 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -8,13 +9,22 @@ export default function Footer() {
     <footer>
       <Container>
         <Row className="mb-4">
-          <Col md={4} className="mb-4 mb-md-0">
+          <Col md={3} className="mb-4 mb-md-0 text-md-center">
+            <Image 
+              src="/logo.jpg" 
+              alt="IPC Shalom Assembly Logo" 
+              width={120} 
+              height={120}
+              style={{ objectFit: 'contain' }}
+            />
+          </Col>
+          <Col md={3} className="mb-4 mb-md-0">
             <h5 className="mb-3">IPC Shalom Assembly</h5>
             <p className="text-white-50">
               Making Jesus known to everyone, everywhere. Join us as we learn to follow Jesus in the 21st century.
             </p>
           </Col>
-          <Col md={4} className="mb-4 mb-md-0">
+          <Col md={3} className="mb-4 mb-md-0">
             <h5 className="mb-3">Quick Links</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
@@ -31,11 +41,13 @@ export default function Footer() {
               </li>
             </ul>
           </Col>
-          <Col md={4}>
+          <Col md={3}>
             <h5 className="mb-3">Contact</h5>
             <p className="text-white-50 mb-2">
-              <strong>Service Times:</strong><br />
-              Sundays at 9 AM and 11 AM
+              <strong>Sundays Service Times:</strong><br />
+              Malayalam :  10:00 AM and 1:00 PM<br />
+              Tamil :  8:00 AM and 11:30 AM<br />
+              English :  8:00 AM and 11:30 AM<br />
             </p>
             <p className="text-white-50">
               <strong>Address:</strong><br />

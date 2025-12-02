@@ -150,8 +150,8 @@ export default function Home() {
           <div className="text-center mb-5">
             <h2 className="section-title">Get Connected</h2>
             <p className="lead text-muted">
-              "Let us consider how to stir up one another to love and good
-              works."" Hebrews 10:24
+              &quot;Let us consider how to stir up one another to love and good
+              works.&quot; Hebrews 10:24
             </p>
           </div>
           <Row>
@@ -236,8 +236,8 @@ export default function Home() {
       <section className="section bg-primary-custom text-white">
         <Container className="text-center">
           <h2 className="section-title text-white mb-4">
-            "Therefore welcome one another as Christ has welcomed you, for the
-            glory of God."
+            &quot;Therefore welcome one another as Christ has welcomed you, for the
+            glory of God.&quot;
           </h2>
           <p className="mb-0">
             No 1, Puliyur 2nd Main Rd, Trustpurum, Kodambakkam,

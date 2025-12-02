@@ -127,7 +127,7 @@ export default function SundaySchool() {
                 <Card.Body className="p-4">
                   <div className="mb-4 pb-3 border-bottom">
                     <h5 className="text-primary-custom mb-2">Morning Session</h5>
-                    <p className="mb-1"><strong>Time:</strong> 9:00 AM - 10:00 AM</p>
+                    <p className="mb-1"><strong>Time:</strong> 10:00 AM and 1:00 PM</p>
                     <p className="text-muted mb-0">
                       All age groups meet for Bible study before the morning worship service.
                     </p>

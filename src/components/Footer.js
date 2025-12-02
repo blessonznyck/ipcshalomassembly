@@ -34,8 +34,10 @@ export default function Footer() {
           <Col md={4}>
             <h5 className="mb-3">Contact</h5>
             <p className="text-white-50 mb-2">
-              <strong>Service Times:</strong><br />
-              Sundays at 9 AM and 11 AM
+              <strong>Sundays Service Times:</strong><br />
+              Malayalam :  10:00 AM and 1:00 PM<br />
+              Tamil :  8:00 AM and 11:30 AM<br />
+              English :  8:00 AM and 11:30 AM<br />
             </p>
             <p className="text-white-50">
               <strong>Address:</strong><br />

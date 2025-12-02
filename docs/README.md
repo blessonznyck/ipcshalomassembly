@@ -28,8 +28,7 @@ IPC Shalom Assembly is a modern church website built with Next.js 15 and Bootstr
 No 1, Puliyur 2nd Main Rd, Trustpurum, Kodambakkam, Chennai, Tamil Nadu 600024
 
 **Service Times:**  
-Sundays at 9 AM and 11 AM
-
+Sundays at 10:00 AM and 1:00 PM
 ---
 
 ## Technology Stack

@@ -9,12 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^15.1.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "airtable": "^0.12.2",
     "bootstrap": "^5.3.2",
+    "next": "^15.1.0",
+    "next-seo": "^6.5.0",
+    "react": "^19.0.0",
     "react-bootstrap": "^2.10.0",
-    "next-seo": "^6.5.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "eslint": "^9",

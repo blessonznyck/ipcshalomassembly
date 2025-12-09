@@ -1,52 +1,67 @@
 'use client'
 
-import { Container, Row, Col, Card } from 'react-bootstrap'
+import { Container, Row, Col, Card, Button, Spinner } from 'react-bootstrap'
+import { useState, useEffect } from 'react'
 
 export default function Sermons() {
-  const sermons = [
-    {
-      title: 'Living with Purpose',
-      speaker: 'Pastor John Smith',
-      date: 'November 26, 2025',
-      description: 'Discover how God has uniquely created you with a purpose and calling that matters.',
-      videoUrl: 'https://www.youtube.com/embed/rn9-UNer6MQ'
-    },
-    {
-      title: 'The Power of Grace',
-      speaker: 'Pastor Sarah Johnson',
-      date: 'November 19, 2025',
-      description: 'Understanding God\'s amazing grace and how it transforms our daily lives.',
-      videoUrl: 'https://www.youtube.com/embed/rn9-UNer6MQ'
-    },
-    {
-      title: 'Faith in Action',
-      speaker: 'Pastor John Smith',
-      date: 'November 12, 2025',
-      description: 'How to put your faith into practice through serving others and making a difference.',
-      videoUrl: 'https://www.youtube.com/embed/rn9-UNer6MQ'
-    },
-    {
-      title: 'Building Strong Relationships',
-      speaker: 'Pastor Mike Davis',
-      date: 'November 5, 2025',
-      description: 'Biblical principles for creating healthy, lasting relationships in all areas of life.',
-      videoUrl: 'https://www.youtube.com/embed/rn9-UNer6MQ'
-    },
-    {
-      title: 'Overcoming Fear',
-      speaker: 'Pastor Sarah Johnson',
-      date: 'October 29, 2025',
-      description: 'Finding courage and strength in God when facing life\'s challenges and uncertainties.',
-      videoUrl: 'https://www.youtube.com/embed/rn9-UNer6MQ'
-    },
-    {
-      title: 'The Heart of Worship',
-      speaker: 'Pastor John Smith',
-      date: 'October 22, 2025',
-      description: 'What it means to worship God with our whole lives, not just on Sundays.',
-      videoUrl: 'https://www.youtube.com/embed/rn9-UNer6MQ'
-    },
-  ]
+  const [sermons, setSermons] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
+  const [hasMore, setHasMore] = useState(false)
+
+  useEffect(() => {
+    fetchSermons(currentPage)
+  }, [currentPage])
+
+  const fetchSermons = async (page) => {
+    try {
+      setLoading(true)
+      setError(null)
+      
+      const response = await fetch(`/api/sermons?page=${page}&pageSize=6`)
+      
+      if (!response.ok) {
+        throw new Error('Failed to fetch sermons')
+      }
+      
+      const data = await response.json()
+      
+      setSermons(data.sermons)
+      setTotalPages(data.totalPages)
+      setHasMore(data.hasMore)
+    } catch (err) {
+      console.error('Error fetching sermons:', err)
+      setError('Unable to load sermons. Please try again later.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  const formatDate = (dateString) => {
+    if (!dateString) return ''
+    const date = new Date(dateString)
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    })
+  }
 
   return (
     <>
@@ -66,37 +81,88 @@ export default function Sermons() {
       <section className="section bg-light">
         <Container>
           <h2 className="section-title text-center mb-5">Recent Messages</h2>
-          <Row>
-            {sermons.map((sermon, index) => (
-              <Col key={index} md={6} lg={4} className="mb-4">
-                <Card className="shadow-sm h-100">
-                  <div className="ratio ratio-16x9">
-                    <iframe 
-                      src={sermon.videoUrl} 
-                      title={sermon.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                      referrerPolicy="strict-origin-when-cross-origin" 
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                  <Card.Body>
-                    <Card.Title className="h5 mb-3">{sermon.title}</Card.Title>
-                    <Card.Text className="text-muted mb-3">
-                      {sermon.description}
-                    </Card.Text>
-                    <div className="border-top pt-3 mt-3">
-                      <div className="d-flex justify-content-between align-items-center">
-                        <small className="text-muted">
-                          <strong>{sermon.speaker}</strong>
-                        </small>
-                        <small className="text-muted">{sermon.date}</small>
-                      </div>
-                    </div>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
+          
+          {loading ? (
+            <div className="text-center py-5">
+              <Spinner animation="border" role="status" variant="primary">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+              <p className="mt-3 text-muted">Loading sermons...</p>
+            </div>
+          ) : error ? (
+            <div className="alert alert-danger text-center" role="alert">
+              {error}
+            </div>
+          ) : sermons.length === 0 ? (
+            <div className="text-center py-5">
+              <p className="text-muted">No sermons available at this time.</p>
+            </div>
+          ) : (
+            <>
+              <Row>
+                {sermons.map((sermon) => (
+                  <Col key={sermon.id} md={6} lg={4} className="mb-4">
+                    <Card className="shadow-sm h-100">
+                      {sermon.videoId ? (
+                        <div className="ratio ratio-16x9">
+                          <iframe 
+                            src={`https://www.youtube.com/embed/${sermon.videoId}`}
+                            title={sermon.title}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerPolicy="strict-origin-when-cross-origin" 
+                            allowFullScreen
+                          ></iframe>
+                        </div>
+                      ) : (
+                        <div className="ratio ratio-16x9 bg-light d-flex align-items-center justify-content-center">
+                          <p className="text-muted">Video not available</p>
+                        </div>
+                      )}
+                      <Card.Body>
+                        <Card.Title className="h5 mb-3">{sermon.title}</Card.Title>
+                        <Card.Text className="text-muted mb-3">
+                          {sermon.description}
+                        </Card.Text>
+                        <div className="border-top pt-3 mt-3">
+                          <div className="d-flex justify-content-between align-items-center">
+                            <small className="text-muted">
+                              <strong>{sermon.author}</strong>
+                            </small>
+                            <small className="text-muted">{formatDate(sermon.date)}</small>
+                          </div>
+                        </div>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="d-flex justify-content-center align-items-center gap-3 mt-5">
+                  <Button 
+                    variant="outline-primary" 
+                    onClick={handlePreviousPage}
+                    disabled={currentPage === 1}
+                    className="rounded-pill px-4"
+                  >
+                    ← Previous
+                  </Button>
+                  <span className="text-muted">
+                    Page {currentPage} of {totalPages}
+                  </span>
+                  <Button 
+                    variant="outline-primary" 
+                    onClick={handleNextPage}
+                    disabled={currentPage === totalPages}
+                    className="rounded-pill px-4"
+                  >
+                    Next →
+                  </Button>
+                </div>
+              )}
+            </>
+          )}
         </Container>
       </section>
 

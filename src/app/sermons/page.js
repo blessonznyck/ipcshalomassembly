@@ -53,24 +53,12 @@ export default function Sermons() {
       {/* Page Header */}
       <section className="hero-section" style={{ minHeight: '40vh' }}>
         <Container>
-          <h1 className="display-4 fw-bold">Sermons & Messages</h1>
-          <p className="lead">Practical teaching from God&apos;s Word</p>
-        </Container>
-      </section>
-
-      {/* Introduction */}
-      <section className="section">
-        <Container>
-          <Row>
-            <Col lg={8} className="mx-auto text-center">
-              <h2 className="section-title">Growing in Faith Together</h2>
-              <p className="lead text-muted">
+          <h1 className="display-4 fw-bold">Growing in Faith Together</h1>
+          <p className="lead bs-w">
                 Our sermons at IPC Shalom Assembly are designed to help you understand the Bible and apply its truths 
                 to your everyday life. Whether you&apos;re new to faith or have been following 
                 Jesus for years, you&apos;ll find practical wisdom and encouragement here.
               </p>
-            </Col>
-          </Row>
         </Container>
       </section>
 
@@ -119,6 +107,14 @@ export default function Sermons() {
           <p className="lead mb-4">
             Subscribe to our YouTube channel to stay up to date with our latest sermons.
           </p>
+          <a 
+            href="https://www.youtube.com/channel/UCXXXXXX" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn btn-danger btn-lg"
+          >
+            SUBSCRIBE
+          </a>
         </Container>
       </section>
     </>

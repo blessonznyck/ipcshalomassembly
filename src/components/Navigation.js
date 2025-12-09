@@ -26,7 +26,7 @@ export default function Navigation() {
             style={{ objectFit: 'contain' }}
             priority
           />
-          <span style={{ fontSize: '1.5rem' }}>IPC SHALOM ASSEMBLY</span>
+          <span className="ipc-title">IPC SHALOM ASSEMBLY</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

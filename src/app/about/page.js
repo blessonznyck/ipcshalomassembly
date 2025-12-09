@@ -41,42 +41,107 @@ export default function About() {
       {/* What We Believe */}
       <section className="section bg-light">
         <Container>
-          <Row>
-            <Col lg={8} className="mx-auto">
-              <h2 className="section-title">What We Believe</h2>
-              <div className="mb-4">
-                <h4 className="text-primary-custom">The Bible</h4>
-                <p>
+          <h2 className="section-title text-center mb-5">What We Believe</h2>
+          <Row className="g-4">
+            <Col md={6} lg={4}>
+              <div className="h-100 p-4 bg-white rounded shadow-sm position-relative overflow-hidden text-center">
+                <div 
+                  className="position-absolute top-0 start-0 w-100 h-2" 
+                  style={{ 
+                    height: '4px', 
+                    background: 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))' 
+                  }}
+                ></div>
+                <div className="mb-3 text-primary-custom" style={{ fontSize: '2.5rem' }}>📖</div>
+                <h4 className="mb-3">The Bible</h4>
+                <p className="text-muted mb-0">
                   We believe the Bible is God&apos;s Word and is our final authority for faith and life. 
                   It is inspired, infallible, and relevant for today.
                 </p>
               </div>
-              <div className="mb-4">
-                <h4 className="text-primary-custom">God</h4>
-                <p>
+            </Col>
+            <Col md={6} lg={4}>
+              <div className="h-100 p-4 bg-white rounded shadow-sm position-relative overflow-hidden text-center">
+                <div 
+                  className="position-absolute top-0 start-0 w-100 h-2" 
+                  style={{ 
+                    height: '4px', 
+                    background: 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))' 
+                  }}
+                ></div>
+                <div className="mb-3 text-primary-custom" style={{ fontSize: '2.5rem' }}>✨</div>
+                <h4 className="mb-3">God</h4>
+                <p className="text-muted mb-0">
                   We believe in one God who exists in three persons: Father, Son, and Holy Spirit. 
                   God is loving, just, and actively involved in our lives.
                 </p>
               </div>
-              <div className="mb-4">
-                <h4 className="text-primary-custom">Jesus Christ</h4>
-                <p>
+            </Col>
+            <Col md={6} lg={4}>
+              <div className="h-100 p-4 bg-white rounded shadow-sm position-relative overflow-hidden text-center">
+                <div 
+                  className="position-absolute top-0 start-0 w-100 h-2" 
+                  style={{ 
+                    height: '4px', 
+                    background: 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))' 
+                  }}
+                ></div>
+                <div className="mb-3 text-primary-custom" style={{ fontSize: '2.5rem' }}>✝️</div>
+                <h4 className="mb-3">Jesus Christ</h4>
+                <p className="text-muted mb-0">
                   We believe Jesus is the Son of God who came to earth, lived a sinless life, died 
                   on the cross for our sins, and rose again. Through faith in Him, we have eternal life.
                 </p>
               </div>
-              <div className="mb-4">
-                <h4 className="text-primary-custom">Salvation</h4>
-                <p>
+            </Col>
+            <Col md={6} lg={4}>
+              <div className="h-100 p-4 bg-white rounded shadow-sm position-relative overflow-hidden text-center">
+                <div 
+                  className="position-absolute top-0 start-0 w-100 h-2" 
+                  style={{ 
+                    height: '4px', 
+                    background: 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))' 
+                  }}
+                ></div>
+                <div className="mb-3 text-primary-custom" style={{ fontSize: '2.5rem' }}>🎁</div>
+                <h4 className="mb-3">Salvation</h4>
+                <p className="text-muted mb-0">
                   We believe salvation is a gift from God that comes through faith in Jesus Christ. 
                   It cannot be earned but is freely given to all who believe.
                 </p>
               </div>
-              <div className="mb-4">
-                <h4 className="text-primary-custom">The Church</h4>
-                <p>
+            </Col>
+            <Col md={6} lg={4}>
+              <div className="h-100 p-4 bg-white rounded shadow-sm position-relative overflow-hidden text-center">
+                <div 
+                  className="position-absolute top-0 start-0 w-100 h-2" 
+                  style={{ 
+                    height: '4px', 
+                    background: 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))' 
+                  }}
+                ></div>
+                <div className="mb-3 text-primary-custom" style={{ fontSize: '2.5rem' }}>⛪</div>
+                <h4 className="mb-3">The Church</h4>
+                <p className="text-muted mb-0">
                   We believe the church is the body of Christ and exists to worship God, build up 
                   believers, and reach out to the world with the gospel.
+                </p>
+              </div>
+            </Col>
+            <Col md={6} lg={4}>
+              <div className="h-100 p-4 bg-white rounded shadow-sm position-relative overflow-hidden text-center">
+                <div 
+                  className="position-absolute top-0 start-0 w-100 h-2" 
+                  style={{ 
+                    height: '4px', 
+                    background: 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))' 
+                  }}
+                ></div>
+                <div className="mb-3 text-primary-custom" style={{ fontSize: '2.5rem' }}>🕊️</div>
+                <h4 className="mb-3">The Holy Spirit</h4>
+                <p className="text-muted mb-0">
+                  We believe the Holy Spirit empowers believers for Christian living and service, 
+                  guides us into truth, and produces spiritual fruit in our lives.
                 </p>
               </div>
             </Col>
